@@ -1,3 +1,4 @@
+#https://stackoverflow.com/questions/3757289/tcp-option-so-linger-zero-when-its-required
 import socket
 import threading
 import thread
@@ -42,7 +43,7 @@ def talk(client, list):
 #threads = []
 def handler(client_sock, addr):
     try:
-        print('new client from %s:%s' % addr)
+        print('disconnected client from %s:%s' % addr)
         time.sleep(1)
     finally:
         client_sock.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER,
@@ -66,4 +67,3 @@ while 1:
     t = threading.Thread(target=talk, args=(client,list, ))
    # threads.append(t)
     t.start()
-    
