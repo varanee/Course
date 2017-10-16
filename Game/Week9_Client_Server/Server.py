@@ -44,12 +44,6 @@ def talk(client, list):
             c.send(json_return)
         #lock.release()
         handler(client, address)
-    #finally:
-    #    s.close()
-    #    lock.acquire()
-    #    list.remove(client)
-    #    lock.release()
-    #    print "sock close "+str(len(list))
 
 #threads = []
 def handler(client_sock, addr):
