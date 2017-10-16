@@ -3,7 +3,7 @@ import socket
 import threading
 import thread
 import errno
-import pickle
+import json
 import time
 import inspect
 import struct
@@ -21,6 +21,7 @@ list = []
 
 def talk(client, list):
     lock = thread.allocate_lock()
+    data = ''
     try:
         while 1:
             lock.acquire()
@@ -30,8 +31,18 @@ def talk(client, list):
                 c.send(data)
             lock.release()
             print "Release lock"
+            time.sleep(0.01)
     except:
+        jsonData = json.loads(data)
+        jsonData['isActive'] = False
+        json_return = json.dumps(jsonData)
+        print "json_return "+json_return
         list.remove(client)
+        print "list"+str(list)
+        #lock.acquire()
+        for c in list:
+            c.send(json_return)
+        #lock.release()
         handler(client, address)
     #finally:
     #    s.close()
@@ -67,3 +78,7 @@ while 1:
     t = threading.Thread(target=talk, args=(client,list, ))
    # threads.append(t)
     t.start()
+
+
+
+
