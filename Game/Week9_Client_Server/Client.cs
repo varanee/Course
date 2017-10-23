@@ -11,6 +11,7 @@ using System.IO;
 public class Main : MonoBehaviour
 {
 	public GameObject go;
+	public GameObject me;
 	LinkedList<GameObject> listOthers;
 	LinkedList<string> listOtherNames;
 	StreamWriter writer;
@@ -18,18 +19,28 @@ public class Main : MonoBehaviour
 	NetworkStream stream;
 	Player player;
 	TcpClient client;
+	float speedx = 3f;
+	float posy = 3f;
+	Vector3 startPos;
+	Vector3 endPos;
+	int numPlayers = 0;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+		posy = UnityEngine.Random.Range (-3f, 3f);
+		me.transform.position = new Vector3 (me.transform.position.x, posy, me.transform.position.z);
+		startPos = endPos = me.transform.position;
 
 		listOthers = new LinkedList<GameObject> ();
 		listOtherNames = new LinkedList<String> ();
 
 		player = new Player ();
-		player.n = "e";
+		player.n = "pok";
 		player.a = 1;
 
 		print ("Connection");
+
 		client = new TcpClient ("127.0.0.1", 16000);
 
 		stream = client.GetStream ();
@@ -43,73 +54,69 @@ public class Main : MonoBehaviour
 
 	//60 fps
 	int s = 0;
-	void Update(){
-		try
-		{
-			
+	void FixedUpdate ()
+	{
+		try {
 
-			if (stream.CanWrite) 
-			{
-				writer.WriteLine (JsonUtility.ToJson (player));
-				writer.Flush ();
+			if (me.transform.position.x < -5 || me.transform.position.x > 5) {
+				speedx *= -1;
 			}
 
-			if (stream.CanRead) 
-			{
-				//string[] splits;
-				//string[] output;
-				string input = reader.ReadLine ();
-				Debug.Log (input);
-				/*if (input.Contains ("false")) {
-					splits = input.Split ('}');
-					int len = splits.Length - 1;
-					output = new string[len];
-					for (int i=0; i<len; i++) {
-						if (splits [i].Contains ("false")) {
-							output [i] = splits [i] + "}";
-							Debug.Log ("output " + output [i]);
-						}
-					}
-				}*/
+			me.transform.Translate (speedx * Time.deltaTime, 0, 0);
+			player.x = me.transform.position.x;
+			player.y = me.transform.position.y;
 
+			if (s == 60){
+				
+				//player.x = UnityEngine.Random.Range(-4f, 4f);
+				//s = 0;
+				if (stream.CanWrite) {
+					writer.WriteLine (JsonUtility.ToJson (player));
+					writer.Flush ();
+				}
 
-				Player p = JsonUtility.FromJson<Player>(input);
-				manageOtherPlayers (p);
+				if (stream.CanRead) {
+					string input = reader.ReadLine ();
+					//Debug.Log (input);
+					Player p = JsonUtility.FromJson<Player> (input);
+					manageOtherPlayers (p);
+				}
 
+			} else {
+				s++;
 			}
 
-			player.x = UnityEngine.Random.Range(-4f, 4f);
-
-		}catch(Exception e){
+		} catch (Exception e) {
 			Debug.Log (e.ToString ());
 		}
 	}
 
-	void manageOtherPlayers(Player p)
+	void manageOtherPlayers (Player p)
 	{
-		Debug.Log (p.n + " " + p.a);
+		//Debug.Log (p.n + " " + p.a);
 
-		if (!listOtherNames.Contains (p.n)) //New comming
-		{ 
-			listOtherNames.AddLast(p.n);
-			GameObject newGo = (GameObject)Instantiate(go, new Vector3 (p.x, p.y, p.z), Quaternion.identity);
+		if (!listOtherNames.Contains (p.n)) { //New comming
+			listOtherNames.AddLast (p.n);
+			GameObject newGo = (GameObject)Instantiate (go, new Vector3 (p.x, p.y, p.z), Quaternion.identity);
 			newGo.name = p.n;
 			listOthers.AddLast (newGo);
-		} 
-		else //Update their status 
-		{
-			foreach (GameObject g in listOthers) 
-			{
-				if(g.name.Equals(p.n))
+		} else { //Update their status 
+			foreach (GameObject g in listOthers) {
+				if (g.name.Equals (p.n)) 
 				{
-					Vector3 gPosition = new Vector3 (Mathf.Round(p.x), p.y, p.z);
+					Vector3 gPosition = new Vector3 (Mathf.Round (p.x), p.y, p.z);
 					g.transform.position = gPosition;
+					//endPos = new Vector3 (Mathf.Round(p.x), p.y, p.z);
+					//g.transform.position = endPos; //Vector3.Lerp(startPos, endPos, perc);
+				} else {
+					//Destroy (g);
 				}
 			}
 		}
 	}
 
-	void OnGUI() {
+	void OnGUI ()
+	{
 		if (listOthers.Count > 0) {
 			foreach (GameObject g in listOthers) {
 				Vector3 position = Camera.main.WorldToScreenPoint (g.transform.position);
@@ -118,11 +125,24 @@ public class Main : MonoBehaviour
 			}
 		}
 	}
+
+	void OnApplicationQuit()
+	{
+		try
+		{
+			client.Close();
+		}
+		catch(Exception e)
+		{
+			Debug.Log(e.Message);
+		}
+	}
 }
 
-public class Player{
+public class Player
+{
 
-	public float x,y,z;
+	public float x, y, z;
 	public string n;
 	public int a;
 
