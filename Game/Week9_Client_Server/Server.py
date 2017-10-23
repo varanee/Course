@@ -7,6 +7,10 @@ import json
 import time
 import inspect
 import struct
+from Queue import Queue
+
+#from signal import signal, SIGPIPE, SIG_DFL
+#signal(SIGPIPE, SIG_DFL)
 
 host = ''
 port = 16000
@@ -17,35 +21,43 @@ s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((host, port))
 s.listen(backlog)
 list = []
+myQueue = Queue()
 
-
-def talk(client, list):
-    lock = thread.allocate_lock()
+def talk( client, list):
+    #lock = thread.allocate_lock()
     data = ''
     try:
         while 1:
-            lock.acquire()
+            #lock.acquire()
             data = client.recv(size)
-            print "Send = " + data + " to "
+            if not data: 
+                break
+           # print client
             for c in list:
-                c.send(data)
-            lock.release()
-            print "Release lock"
-            time.sleep(0.01)
-    except:
-        jsonData = json.loads(data)
-        jsonData['isActive'] = False
-        json_return = json.dumps(jsonData)
-        print "json_return "+json_return
+           #     print data
+                if c != client:
+                    c.send(data)
+            #lock.release()
+            #time.sleep(0.01)
+        raise Exception('client disconnect')
+    except Exception as e:
+        print "".format(e)
+        if data:
+            jsonData = json.loads(data)
+            jsonData['a'] = 0
+            json_return = json.dumps(jsonData)
+            print "json_return "+json_return
         list.remove(client)
         print "list"+str(list)
+        print "Get queue"+str(myQueue.get())
+                    
         #lock.acquire()
-        for c in list:
-            c.send(json_return)
+        if len(list) != 0:
+            for c in list:
+                c.send(json_return)
         #lock.release()
         handler(client, address)
 
-#threads = []
 def handler(client_sock, addr):
     try:
         print('disconnected client from %s:%s' % addr)
@@ -70,9 +82,7 @@ while 1:
     client.send("Hello!\n")
 
     t = threading.Thread(target=talk, args=(client,list, ))
-   # threads.append(t)
+    t.daemon = True
     t.start()
-
-
-
-
+    myQueue.put(t)
+    
