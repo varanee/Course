@@ -36,7 +36,7 @@ public class Main : MonoBehaviour
 		listOtherNames = new LinkedList<String> ();
 
 		player = new Player ();
-		player.n = "pok";
+		player.n = "pok1";
 		player.a = 1;
 
 		print ("Connection");
@@ -66,26 +66,27 @@ public class Main : MonoBehaviour
 			player.x = me.transform.position.x;
 			player.y = me.transform.position.y;
 
-			if (s == 60){
-				
+			if (s % 300 == 0){
+
 				//player.x = UnityEngine.Random.Range(-4f, 4f);
-				//s = 0;
+				s = 0;
 				if (stream.CanWrite) {
 					writer.WriteLine (JsonUtility.ToJson (player));
 					writer.Flush ();
 				}
 
-				if (stream.CanRead) {
-					string input = reader.ReadLine ();
-					//Debug.Log (input);
-					Player p = JsonUtility.FromJson<Player> (input);
-					manageOtherPlayers (p);
-				}
 
 			} else {
 				s++;
 			}
 
+			if (stream.CanRead) {
+				string input = reader.ReadLine ();
+				reader.DiscardBufferedData();
+				//Debug.Log (input);
+				Player p = JsonUtility.FromJson<Player> (input);
+				manageOtherPlayers (p);
+			}
 		} catch (Exception e) {
 			Debug.Log (e.ToString ());
 		}
@@ -93,7 +94,7 @@ public class Main : MonoBehaviour
 
 	void manageOtherPlayers (Player p)
 	{
-		//Debug.Log (p.n + " " + p.a);
+		Debug.Log (p.n + " " + p.a);
 
 		if (!listOtherNames.Contains (p.n)) { //New comming
 			listOtherNames.AddLast (p.n);
@@ -147,4 +148,3 @@ public class Player
 	public int a;
 
 }
-	
