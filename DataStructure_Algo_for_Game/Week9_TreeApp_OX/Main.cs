@@ -4,50 +4,66 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-public class Main : MonoBehaviour {
+public class Main : MonoBehaviour
+{
 	string output = "";
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		//1 = o, 2 = x
-		char player = '1';
-		TreeNode<string> root = new TreeNode<string>("100000000");
-		TreeNode<string>[] rootChilds = new TreeNode<string>[8];
-
-		int countZero = 0;
-		for (int i = 0; i < 6; i++)
-		{ 
-			StringBuilder value = new StringBuilder("101020002");
-			for (int j = countZero; j < value.Length; j++) {
-				char cell = value [j];
-				if (cell == '0') {
-					countZero = j+1;
-					value.Replace (cell, player, j, 1);
-					rootChilds[i] = root.AddChild(value.ToString());
-					break;
-				}
-			}
-		}
-			
+		char playerTurn = '1';
+		TreeNode<string> root = new TreeNode<string> ("121212000");
+		int numOfBlankCell = 3;
+		generateTree (root, root.Data, playerTurn, numOfBlankCell);
+	
+		//Show output
 		foreach (TreeNode<string> node in root) {
 			string indent = CreateIndent (node.Level);
 			output += indent + (node.Data + "\n" ?? "null\n");
 		}
+
 		Debug.Log (output);
 	}
 
-	void OnGUI(){
-		GUI.Box (new Rect (0, 0, 400, 600), "Result");
-		GUI.Label( new Rect (50, 50, 300, 400), output);
+	void generateTree(TreeNode<string> treeNode, string value, char player, int numChild)
+	{
+		int countZero = 0;
+		for (int i = 0; i < numChild; i++) 
+		{
+			StringBuilder _value = new StringBuilder (value);
+			for (int j = countZero; j < value.Length; j++) 
+			{
+				char cell = _value [j];
+				if (cell == '0') 
+				{
+					countZero = j + 1;
+					_value.Replace (cell, player, j, 1);
+					TreeNode<string> _treeNode = treeNode.AddChild (_value.ToString ());
+					char _player = (player == '1' ? '2' : '1');
+					generateTree (_treeNode, _treeNode.Data, _player, numChild - 1);
+					break;
+				}
+			}
+		}
 	}
 
-	private static String CreateIndent(int depth)
+	public Vector2 scrollPosition = Vector2.zero;
+	void OnGUI ()
 	{
-		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < depth; i++)
-		{
-			sb.Append("    ");
+		scrollPosition = GUILayout.BeginScrollView (scrollPosition,
+			GUILayout.Width (600),
+			GUILayout.Height (800));
+		GUILayout.Label (output);
+		GUILayout.EndScrollView();
+	}
+
+	private static String CreateIndent (int depth)
+	{
+		StringBuilder sb = new StringBuilder ();
+		for (int i = 0; i < depth; i++) {
+			sb.Append ("    ");
 		}
-		return sb.ToString();
+		return sb.ToString ();
 	}
 }
 
@@ -64,21 +80,25 @@ public class Main : MonoBehaviour {
 public class TreeNode<T> : IEnumerable<TreeNode<T>>
 {
 	public T Data { get; set; }
+
 	public TreeNode<T> Parent { get; set; }
+
 	public ICollection<TreeNode<T>> Children { get; set; }
 
-	public TreeNode(T data){
+	public TreeNode (T data)
+	{
 		this.Data = data;
-		this.Children = new LinkedList<TreeNode<T>>();
+		this.Children = new LinkedList<TreeNode<T>> ();
 	}
 
-	public TreeNode<T> AddChild(T child)	{
-		TreeNode<T> childNode = new TreeNode<T>(child) { Parent = this };
-		this.Children.Add(childNode);
+	public TreeNode<T> AddChild (T child)
+	{
+		TreeNode<T> childNode = new TreeNode<T> (child) { Parent = this };
+		this.Children.Add (childNode);
 		return childNode;
 	}
 
-	public Boolean IsRoot	{
+	public Boolean IsRoot {
 		get { return Parent == null; }
 	}
 
@@ -94,21 +114,21 @@ public class TreeNode<T> : IEnumerable<TreeNode<T>>
 		}
 	}
 
-	public override string ToString(){
-		return Data != null ? Data.ToString() : "[data null]";
-	}
-
-
-	IEnumerator IEnumerable.GetEnumerator()
+	public override string ToString ()
 	{
-		return GetEnumerator();
+		return Data != null ? Data.ToString () : "[data null]";
 	}
 
-	public IEnumerator<TreeNode<T>> GetEnumerator()
+
+	IEnumerator IEnumerable.GetEnumerator ()
+	{
+		return GetEnumerator ();
+	}
+
+	public IEnumerator<TreeNode<T>> GetEnumerator ()
 	{
 		yield return this;
-		foreach (var directChild in this.Children)
-		{
+		foreach (var directChild in this.Children) {
 			foreach (var anyChild in directChild)
 				yield return anyChild;
 		}
