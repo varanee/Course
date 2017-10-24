@@ -42,7 +42,7 @@ def talk( client, list):
             #time.sleep(0.01)
         raise Exception('client disconnect')
     except Exception as e:
-        print "".format(e)
+        #print "".format(e)
         if data:
             jsonData = json.loads(data)
             jsonData['a'] = 0
