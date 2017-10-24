@@ -36,6 +36,7 @@ def talk( client, list):
             for c in list:
            #     print data
                 if c != client:
+                    print data
                     c.send(data)
             #lock.release()
             #time.sleep(0.01)
@@ -47,14 +48,15 @@ def talk( client, list):
             jsonData['a'] = 0
             json_return = json.dumps(jsonData)
             print "json_return "+json_return
+            for c in list:
+                if c != client:
+                    c.send(json_return)
         list.remove(client)
         print "list"+str(list)
         print "Get queue"+str(myQueue.get())
                     
         #lock.acquire()
-        if len(list) != 0:
-            for c in list:
-                c.send(json_return)
+        
         #lock.release()
         handler(client, address)
 
