@@ -19,19 +19,10 @@ public class Main : MonoBehaviour
 	NetworkStream stream;
 	Player player;
 	TcpClient client;
-	float speedx = 3f;
-	float posy = 3f;
-	Vector3 startPos;
-	Vector3 endPos;
-	int numPlayers = 0;
 
 	// Use this for initialization
 	void Start ()
 	{
-		posy = UnityEngine.Random.Range (-3f, 3f);
-		me.transform.position = new Vector3 (me.transform.position.x, posy, me.transform.position.z);
-		startPos = endPos = me.transform.position;
-
 		listOthers = new LinkedList<GameObject> ();
 		listOtherNames = new LinkedList<String> ();
 
@@ -57,26 +48,21 @@ public class Main : MonoBehaviour
 	void FixedUpdate ()
 	{
 		try {
+			
+			player.x = Mathf.Round(LerpExample.POS.x);
+			player.y = Mathf.Round(LerpExample.POS.y);
 
-			if (me.transform.position.x < -5 || me.transform.position.x > 5) {
-				speedx *= -1;
-			}
-
-			me.transform.Translate (speedx * Time.deltaTime, 0, 0);
-			player.x = me.transform.position.x;
-			player.y = me.transform.position.y;
-
-			if (s % 300 == 0){
-
-				//player.x = UnityEngine.Random.Range(-4f, 4f);
+			//Send data to server every 1 second.
+			if (s % 60 == 0)
+			{
 				s = 0;
 				if (stream.CanWrite) {
 					writer.WriteLine (JsonUtility.ToJson (player));
 					writer.Flush ();
 				}
-
-
-			} else {
+			} 
+			else 
+			{
 				s++;
 			}
 
@@ -87,32 +73,29 @@ public class Main : MonoBehaviour
 				Player p = JsonUtility.FromJson<Player> (input);
 				manageOtherPlayers (p);
 			}
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			Debug.Log (e.ToString ());
 		}
 	}
 
 	void manageOtherPlayers (Player p)
 	{
-		Debug.Log (p.n + " " + p.a);
+		//Debug.Log (p.n + " " + p.a);
 
-		if (!listOtherNames.Contains (p.n)) { //New comming
+		if (!listOtherNames.Contains (p.n)) 
+		{ 
+			
 			listOtherNames.AddLast (p.n);
 			GameObject newGo = (GameObject)Instantiate (go, new Vector3 (p.x, p.y, p.z), Quaternion.identity);
 			newGo.name = p.n;
 			listOthers.AddLast (newGo);
+
 		} else { //Update their status 
-			foreach (GameObject g in listOthers) {
-				if (g.name.Equals (p.n)) 
-				{
-					Vector3 gPosition = new Vector3 (Mathf.Round (p.x), p.y, p.z);
-					g.transform.position = gPosition;
-					//endPos = new Vector3 (Mathf.Round(p.x), p.y, p.z);
-					//g.transform.position = endPos; //Vector3.Lerp(startPos, endPos, perc);
-				} else {
-					//Destroy (g);
-				}
-			}
+			
+			GameObject.Find(p.n).transform.position = new Vector3(p.x,p.y,p.z);
+			Debug.Log (p.x + " " + p.y);
+
 		}
 	}
 
