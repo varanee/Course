@@ -72,6 +72,14 @@ public class tree : MonoBehaviour {
 			return true;
 		}
 			
+		string firstCol = treeNodeValue.ToCharArray () [0].ToString () +
+		                  treeNodeValue.ToCharArray () [3].ToString () +
+		                  treeNodeValue.ToCharArray () [6].ToString ();
+		
+		if (firstCol.Equals ("111") || firstCol.Equals ("222")) {
+			return true;
+		}
+
 		return false;
 	}
 
