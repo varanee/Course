@@ -10,14 +10,14 @@ public class tree : MonoBehaviour {
 	void Start () {
 		//1 = o, 2 = x
 		char playerTurn = '1';
-		TreeNode<string> root = new TreeNode<string> ("121212000");
+		TreeNode<string> root = new TreeNode<string> ("121001012"); //good example
 		int numOfBlankCell = 3;
 
 		generateTree (root, playerTurn, numOfBlankCell);
 		//check the correctness of the first pattern
-		bool result = checkGameStatus("111000000"); //true
-		bool result2 = checkGameStatus("222000000"); //true
-		bool result3 = checkGameStatus("112000000"); //False
+		//bool result = checkGameStatus("111000000"); //true
+		//bool result2 = checkGameStatus("222000000"); //true
+		//bool result3 = checkGameStatus("112000000"); //False
 
 		//Show output
 		int count = 0;
@@ -30,10 +30,10 @@ public class tree : MonoBehaviour {
 		Debug.Log (output);
 	}
 
-	void generateTree(TreeNode<string> treeNode, char player, int numChild)
+	void generateTree(TreeNode<string> treeNode, char player, int numOfBlankCell)
 	{
 		int countZero = 0;
-		for (int i = 0; i < numChild; i++) 
+		for (int i = 0; i < numOfBlankCell; i++) 
 		{
 			StringBuilder _value = new StringBuilder (treeNode.Data);
 			for (int j = countZero; j < _value.Length; j++) 
@@ -43,44 +43,181 @@ public class tree : MonoBehaviour {
 				{
 					countZero = j + 1;
 					_value.Replace (cell, player, j, 1);
-					TreeNode<string> _treeNode = treeNode.AddChild (_value.ToString ());
-					char _player = (player == '1' ? '2' : '1');
 
-					//Check Win/Lose
-
-					generateTree (_treeNode, _player, numChild - 1);
-					break;
+					int whoWin = checkGameStatusV2(_value.ToString());
+					if (whoWin == 1) {
+						Debug.Log (whoWin + " win "+_value.ToString());
+						break;
+					} else if (whoWin == 2) {
+						Debug.Log (whoWin + " win."+_value.ToString());
+				
+					//if (checkGameStatus(_value.ToString())) {
+					//	Debug.Log (_value.ToString());
+						break;
+					} else {
+						TreeNode<string> _treeNode = treeNode.AddChild (_value.ToString ());
+						char _player = (player == '1' ? '2' : '1');
+						generateTree (_treeNode, _player, numOfBlankCell - 1);
+						Debug.Log (" Draw "+_value.ToString());
+						break;
+					}
 				}
 			}
 		}
 	}
 	//If true is game over
 	public bool checkGameStatus(string treeNodeValue){
-		
+
 		string firstRow = treeNodeValue.Substring (0, 3);
 		if (firstRow.Equals ("111") || firstRow.Equals ("222")) {
 			return true;
 		}
 
 		string secondRow = treeNodeValue.Substring (3, 3);
-		if (firstRow.Equals ("111") || firstRow.Equals ("222")) {
+		if (secondRow.Equals ("111") || secondRow.Equals ("222")) {
 			return true;
 		}
 
 		string thirdRow = treeNodeValue.Substring (6, 3);
-		if (firstRow.Equals ("111") || firstRow.Equals ("222")) {
+		if (thirdRow.Equals ("111") || thirdRow.Equals ("222")) {
 			return true;
 		}
-			
+
 		string firstCol = treeNodeValue.ToCharArray () [0].ToString () +
-		                  treeNodeValue.ToCharArray () [3].ToString () +
-		                  treeNodeValue.ToCharArray () [6].ToString ();
-		
+			treeNodeValue.ToCharArray () [3].ToString () +
+			treeNodeValue.ToCharArray () [6].ToString ();
+
 		if (firstCol.Equals ("111") || firstCol.Equals ("222")) {
 			return true;
 		}
 
+		string secondCol = treeNodeValue.ToCharArray () [1].ToString () +
+			treeNodeValue.ToCharArray () [4].ToString () +
+			treeNodeValue.ToCharArray () [7].ToString ();
+
+		if (secondCol.Equals ("111") || secondCol.Equals ("222")) {
+			return true;
+		}
+
+		string thirdCol = treeNodeValue.ToCharArray () [2].ToString () +
+			treeNodeValue.ToCharArray () [5].ToString () +
+			treeNodeValue.ToCharArray () [8].ToString ();
+
+		if (thirdCol.Equals ("111") || thirdCol.Equals ("222")) {
+			return true;
+		}
+
+		string diagLeft = treeNodeValue.ToCharArray () [0].ToString () +
+			treeNodeValue.ToCharArray () [4].ToString () +
+			treeNodeValue.ToCharArray () [8].ToString ();
+
+		if (diagLeft.Equals ("111") || diagLeft.Equals ("222")) {
+			return true;
+		}
+
+		string diagRight = treeNodeValue.ToCharArray () [2].ToString () +
+			treeNodeValue.ToCharArray () [4].ToString () +
+			treeNodeValue.ToCharArray () [6].ToString ();
+
+		if (diagRight.Equals ("111") || diagRight.Equals ("222")) {
+			return true;
+		}
+
 		return false;
+	}
+
+
+		
+	public int checkGameStatusV2(string treeNodeValue){
+
+		string firstRow = treeNodeValue.Substring (0, 3);
+		if (firstRow.Equals ("111")) {
+			return 1;
+		}
+		if (firstRow.Equals ("222")) {
+			return 2;
+		}
+
+		string secondRow = treeNodeValue.Substring (3, 3);
+		if (secondRow.Equals ("111")) {
+			return 1;
+		}
+		if (secondRow.Equals ("222")) {
+			return 2;
+		}
+
+		string thirdRow = treeNodeValue.Substring (3, 3);
+		if (thirdRow.Equals ("111")) {
+			return 1;
+		}
+		if (thirdRow.Equals ("222")) {
+			return 2;
+		}
+			
+
+		string firstCol = treeNodeValue.ToCharArray () [0].ToString () +
+			treeNodeValue.ToCharArray () [3].ToString () +
+			treeNodeValue.ToCharArray () [6].ToString ();
+
+		if (firstCol.Equals ("111")){
+			return 1;
+		}
+
+		if (firstCol.Equals ("222")){
+			return 1;
+		}
+
+		string secondCol = treeNodeValue.ToCharArray () [1].ToString () +
+			treeNodeValue.ToCharArray () [4].ToString () +
+			treeNodeValue.ToCharArray () [7].ToString ();
+
+		if (secondCol.Equals ("111")){
+			return 1;
+		}
+
+		if (secondCol.Equals ("222")){
+			return 1;
+		}
+
+		string thirdCol = treeNodeValue.ToCharArray () [2].ToString () +
+			treeNodeValue.ToCharArray () [5].ToString () +
+			treeNodeValue.ToCharArray () [8].ToString ();
+
+		if (thirdCol.Equals ("111")){
+			return 1;
+		}
+
+		if (thirdCol.Equals ("222")){
+			return 1;
+		}
+
+		string diagLeft = treeNodeValue.ToCharArray () [0].ToString () +
+			treeNodeValue.ToCharArray () [4].ToString () +
+			treeNodeValue.ToCharArray () [8].ToString ();
+
+		if (diagLeft.Equals ("111")) {
+			return 1;
+		}
+
+		if (diagLeft.Equals ("222")) {
+			return 2;
+		}
+
+		string diagRight = treeNodeValue.ToCharArray () [2].ToString () +
+			treeNodeValue.ToCharArray () [4].ToString () +
+			treeNodeValue.ToCharArray () [6].ToString ();
+
+		if (diagRight.Equals ("111"))
+		{
+			return 1;
+		}
+
+		if (diagRight.Equals ("111"))
+		{
+			return 2;
+		}
+
+		return -1; // -1 is draw
 	}
 
 	public Vector2 scrollPosition = Vector2.zero;
