@@ -40,10 +40,15 @@ public class Main : MonoBehaviour
 			reader = new StreamReader (stream);
 			Debug.Log (reader.ReadLine ());
 		}
+		if (stream.CanWrite) {
+			Debug.Log ("send data " + player.n);
+			writer.Write(player.n);
+			writer.Flush ();
+		}
 	}
 
 	//60 fps
-	int s = 0;
+	int s = 1;
 	void Update ()
 	{
 		try {
@@ -51,27 +56,21 @@ public class Main : MonoBehaviour
 			player.x = Mathf.Round(Ship.POS.x);
 			player.y = Mathf.Round(Ship.POS.y);
 
-			if(Ship.isMoving){
-				if (s % 10 == 0)
+			if(Ship.isMoving)
+			{
+				if (stream.CanWrite) 
 				{
-					s = 0;
-					if (stream.CanWrite) {
-						writer.WriteLine (JsonUtility.ToJson (player));
-						writer.Flush ();
-					}
-				} 
-				else 
-				{
-					s++;
+					writer.WriteLine (JsonUtility.ToJson (player));
+					writer.Flush ();
 				}
 			}
 
-			if (stream.CanRead) {
+			if (stream.CanRead) 
+			{
 				string input = reader.ReadLine ();
-				reader.DiscardBufferedData();
+				//Debug.Log("in "+input);
+				//reader.DiscardBufferedData();
 				Player p = JsonUtility.FromJson<Player> (input);
-				if(p.a == 0)
-					Debug.Log("Exited alerted");
 				manageOtherPlayers (p);
 			}
 		} 
@@ -94,24 +93,36 @@ public class Main : MonoBehaviour
 			GameObject newGo = 
 				(GameObject)Instantiate (
 					go, 
-					new Vector3 (p.x, p.y, p.z), 
+					new Vector3 (p.x, p.y, 0f), 
 					Quaternion.identity);
 			newGo.name = p.n;
 			listOthers.AddLast (newGo);
 		} 
 		else 
 		{ 
-
+			
 			GameObject e = GameObject.Find (p.n);
+			Debug.Log ("p.a = " + p.a);
 			if (p.a == 1) {
-				e.transform.position = 
-				Vector3.Lerp
+				//float dist = Vector3.Distance (e.transform.position, new Vector3 (p.x, p.y, 0f));
+				//Debug.Log ("dist = " + dist);
+				//Debug.Log (Time.time);
+
+				//currentLerpTime += 0.1f;
+				e.transform.position = Vector3.Lerp
 				(
 					e.transform.position, 
-					new Vector3 (p.x, p.y, p.z),
-					0.1f
+					new Vector3 (p.x, p.y, 0f),
+						0.15f
 				);
+
+				//if (currentLerpTime > lerpTime)
+				//	currentLerpTime = 0f;
+				
+				//e.transform.position = new Vector3 (p.x, p.y, 0f);
+	
 			} else {
+				Debug.Log ("p.a = " + p.a);
 				DestroyObject (e);
 				listOthers.Remove (e);
 				listOtherNames.Remove (e.name);
@@ -146,7 +157,7 @@ public class Main : MonoBehaviour
 
 public class Player
 {
-	public float x, y, z;
+	public float x, y;
 	public string n;
 	public int a;
 }
