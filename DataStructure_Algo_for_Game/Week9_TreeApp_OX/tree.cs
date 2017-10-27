@@ -9,7 +9,7 @@ public class tree : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//1 = o, 2 = x
-		char playerTurn = '1';
+		char playerTurn = '2';
 		TreeNode<string> root = new TreeNode<string> ("121001012"); //good example
 		int numOfBlankCell = 3;
 
