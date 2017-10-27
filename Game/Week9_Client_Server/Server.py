@@ -1,16 +1,9 @@
-#https://stackoverflow.com/questions/3757289/tcp-option-so-linger-zero-when-its-required
 import socket
 import threading
-import thread
-import errno
 import json
 import time
-import inspect
 import struct
 from Queue import Queue
-
-#from signal import signal, SIGPIPE, SIG_DFL
-#signal(SIGPIPE, SIG_DFL)
 
 host = ''
 port = 16000
@@ -21,43 +14,34 @@ s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((host, port))
 s.listen(backlog)
 list = []
+dict = {}
 myQueue = Queue()
+data = ''
 
-def talk( client, list):
-    #lock = thread.allocate_lock()
-    data = ''
+def talk( client, list, dict, address):
     try:
+        data = ''
         while 1:
-            #lock.acquire()
             data = client.recv(size)
             if not data: 
                 break
-           # print client
             for c in list:
-           #     print data
                 if c != client:
                     print data
                     c.send(data)
-            #lock.release()
-            #time.sleep(0.01)
         raise Exception('client disconnect')
     except Exception as e:
-        #print "".format(e)
-        if data:
-            jsonData = json.loads(data)
-            jsonData['a'] = 0
-            json_return = json.dumps(jsonData)
-            print "json_return "+json_return
-            for c in list:
-                if c != client:
-                    c.send(json_return)
+        json_string = '{"x":-5.0,"y":3.0,"n":"'+dict[address]+'","a":0}'
+        parsed_json = json.dumps(json_string) #This both line remove \ from json
+        return_json = json.loads(parsed_json)
+        for c in list:
+            if c != client:
+                c.send(return_json+"\n")
+        time.sleep(1)
         list.remove(client)
+        dict.pop(address, None)
         print "list"+str(list)
         print "Get queue"+str(myQueue.get())
-                    
-        #lock.acquire()
-        
-        #lock.release()
         handler(client, address)
 
 def handler(client_sock, addr):
@@ -78,12 +62,14 @@ while 1:
     print address
 
     list.append(client)
-
-    print len(list)
+    print "No. of clients = "+str(len(list))
 
     client.send("Hello!\n")
+    data = client.recv(size)
+    dict[address] = data
+    print "User = "+dict[address] + " is connected."
 
-    t = threading.Thread(target=talk, args=(client,list, ))
+    t = threading.Thread(target=talk, args=(client,list,dict,address ))
     t.daemon = True
     t.start()
     myQueue.put(t)
