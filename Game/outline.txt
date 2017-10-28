@@ -1,2 +1,3 @@
 
 http://www.madwomb.com/tutorials/GameDesign_Tufts.html
+https://web.stanford.edu/class/cs248/lectures.html
