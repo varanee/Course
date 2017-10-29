@@ -14,3 +14,11 @@ Midterm
 13)	Networking I
 14) 	Networking II
 15)     Case study
+Final
+
+Scores
+Midterm 30%
+Final 30%
+Project 30%
+Attend 10%
+Quiz 10% (Option)
