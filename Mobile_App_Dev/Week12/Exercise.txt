@@ -1,0 +1,5 @@
+https://github.com/jokecamp/FootballData/blob/master/Euro%202016/spain-players.json
+Name, position, club
+
+Send data to server
+http://blog.appliedinformaticsinc.com/sending-json-data-to-server-using-async-thread/

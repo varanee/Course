@@ -1,0 +1,7 @@
+#Sat Jan 28 10:01:03 ICT 2017
+base.0=D\:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_060c79102edfbdc4a8e81fa5af7efbcf75803a08
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_9471468c514f7b7d3cf12f7f237ac2cee044399d\\classes.dex
+base.1=D\:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_9471468c514f7b7d3cf12f7f237ac2cee044399d
+file.0=D\:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_060c79102edfbdc4a8e81fa5af7efbcf75803a08\\classes.dex

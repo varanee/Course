@@ -1,1 +1,16 @@
-
+1)	Introduction and application fundamental 
+2) 	Layout and GUI widget I
+3) 	Activity LifeCycle
+4) 	Intent 
+5) 	share Preference
+6) 	Saving data & files
+7)	Saving database
+Midterm
+8) 	Concurrent I
+9) 	Concurrent II
+10) 	Multimedia I
+11) 	Multimedia II
+12) 	Json
+13)	Networking I
+14) 	Networking II
+15)     Case study

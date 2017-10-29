@@ -1,0 +1,2 @@
+1) https://developer.android.com/training/basics/data-storage/files.html#WriteInternalStorage
+2) http://stackoverflow.com/questions/14376807/how-to-read-write-string-from-a-file-in-android

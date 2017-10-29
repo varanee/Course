@@ -1,0 +1,17 @@
+Page 10, 11, 13, 15
+Modify Activity A calls B by sending int value.
+- Add EditText in A for input a number.
+- Add TextView in B for show the number.
+A
+intent.putExtra("x",5);
+B
+int temp = intent.getIntExtra("x",0); //temp = 5;
+
+Use double quote --> "content://contacts/people/"
+Change PICK --> VIEW
+
+To fix.
+1. ย้ายลูกศรหน้า 43 ไปทางซ้าย and check code again.
+
+
+
