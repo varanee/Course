@@ -14,10 +14,6 @@ public class tree : MonoBehaviour {
 		int numOfBlankCell = 3;
 
 		generateTree (root, playerTurn, numOfBlankCell);
-		//check the correctness of the first pattern
-		//bool result = checkGameStatus("111000000"); //true
-		//bool result2 = checkGameStatus("222000000"); //true
-		//bool result3 = checkGameStatus("112000000"); //False
 
 		//Show output
 		int count = 0;
@@ -127,7 +123,7 @@ public class tree : MonoBehaviour {
 	}
 
 
-		
+	//Return 1,2, and -1
 	public int checkGameStatusV2(string treeNodeValue){
 
 		string firstRow = treeNodeValue.Substring (0, 3);
