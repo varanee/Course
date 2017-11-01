@@ -18,6 +18,7 @@ public class Main : MonoBehaviour
 	StreamWriter writer;
 	StreamReader reader;
 	NetworkStream stream;
+	MemoryStream memStream;
 	Player player;
 	TcpClient client;
 
@@ -29,7 +30,7 @@ public class Main : MonoBehaviour
 		listOtherNames = new LinkedList<String> ();
 
 		player = new Player ();
-		player.n = "pok1";
+		player.n = "pok4";
 		player.a = 1;
 
 		client = new TcpClient ("127.0.0.1", 16000);
@@ -53,18 +54,35 @@ public class Main : MonoBehaviour
 		incomeThread.Start ();
 
 		//player.y = UnityEngine.Random.Range (-4f, 4f);
-		float yPos = UnityEngine.Random.Range (-4f, 4f);
+		float yPos = UnityEngine.Random.Range (-6f, 6f);
 		me.transform.position = new Vector3 (0, yPos, 0);
 	}
 
 	//bool isRecvMsg = true;
 	void incomeMsg ()
 	{
+		/*while (true) 
+		{
+			stream = client.GetStream ();
+			if (stream.DataAvailable) 
+			{
+				 // read in chunks of 2KB
+				byte[] buf = new byte[1024];
+				int bytesRead = stream.Read (buf, 0, buf.Length);
+				string inStr = System.Text.Encoding.UTF8.GetString (buf);
+				lock (buffer) 
+				{
+					buffer.Enqueue (inStr);
+					//Debug.Log ("inStr " + inStr);
+				}
+			}
+		}
+		*/
 		while (true) {
 			stream = client.GetStream ();
 			if (stream.DataAvailable) {
 				string input = reader.ReadLine ();
-				Debug.Log ("input in thread " + input);
+				//Debug.Log ("input in thread " + input);
 				lock (buffer) {
 					buffer.Enqueue (input);
 				}
@@ -74,7 +92,7 @@ public class Main : MonoBehaviour
 
 
 	//60 fps
-	float sx = 3f;
+	float sx = 4f;
 
 	void Update ()
 	{
@@ -83,12 +101,13 @@ public class Main : MonoBehaviour
 			//player.x = Mathf.Round(Ship.POS.x);
 			//player.y = Mathf.Round(Ship.POS.y);
 
-			if (me.transform.position.x < -7f || me.transform.position.x > 7f)
+			if (me.transform.position.x < -3f || me.transform.position.x > 3f)
 				sx = -sx;
 
 			me.transform.position += new Vector3 (sx * Time.deltaTime, 0, 0);
 			player.x = Mathf.Round(me.transform.position.x);
-				player.y = Mathf.Round(me.transform.position.y);
+			player.y = Mathf.Round(me.transform.position.y);
+
 
 			//if (Ship.isMoving) 
 			{
@@ -101,21 +120,14 @@ public class Main : MonoBehaviour
 			lock (buffer) {
 				while (buffer.Count > 0) {
 					string inMsg = buffer.Dequeue ();
-					Debug.Log ("inMsg = " + inMsg);
+					//Debug.Log ("inMsg = " + inMsg);
 					Player p = JsonUtility.FromJson<Player> (inMsg);
 					manageOtherPlayers (p);
 				}
 			}
-			/* old
-			 * if (stream.CanRead) 
-			{
-				string input = reader.ReadLine ();
-				buffer.Enqueue(input);
-				Player p = JsonUtility.FromJson<Player> (buffer.Dequeue());
-				manageOtherPlayers (p);
-			}*/
+
 		} catch (Exception e) {
-			Debug.Log (e.ToString ());
+			//Debug.Log (e.ToString ());
 		}
 	}
 
@@ -126,7 +138,7 @@ public class Main : MonoBehaviour
 
 	void manageOtherPlayers (Player p)
 	{
-		Debug.Log (p.n + " " + p.a);
+		//Debug.Log (p.n + " " + p.a);
 		if (!listOtherNames.Contains (p.n)) {
 			
 			GameObject newGo = 
@@ -141,7 +153,7 @@ public class Main : MonoBehaviour
 		} else { 
 			
 			GameObject e = GameObject.Find (p.n);
-			Debug.Log ("p.a = " + p.a);
+			//Debug.Log ("p.a = " + p.a);
 			if (p.a == 1) {
 				//float dist = Vector3.Distance (e.transform.position, new Vector3 (p.x, p.y, 0f));
 				//Debug.Log ("dist = " + dist);
@@ -161,11 +173,11 @@ public class Main : MonoBehaviour
 				//e.transform.position = new Vector3 (p.x, p.y, 0f);
 	
 			} else {
-				Debug.Log ("p.a = " + p.a);
+				//Debug.Log ("p.a = " + p.a);
 				DestroyObject (e);
 				listOthers.Remove (e);
 				listOtherNames.Remove (e.name);
-				Debug.Log ("destroy" + e.name);
+				//Debug.Log ("destroy" + e.name);
 			}
 		}
 	}
@@ -174,7 +186,7 @@ public class Main : MonoBehaviour
 	{
 		if (listOthers.Count > 0) {
 			foreach (GameObject g in listOthers) {
-				Debug.Log ("Debug " + g.name);
+				//Debug.Log ("Debug " + g.name);
 				Vector3 position = Camera.main.WorldToScreenPoint (g.transform.position);
 				Vector2 textSize = GUI.skin.label.CalcSize (new GUIContent (g.name));
 				GUI.Label (new Rect (position.x, Screen.height - (position.y + 60f), textSize.x, textSize.y), g.name);
@@ -188,7 +200,7 @@ public class Main : MonoBehaviour
 			client.Close ();
 			stream.Close ();
 		} catch (Exception e) {
-			Debug.Log (e.Message);
+			//Debug.Log (e.Message);
 		}
 	}
 }
