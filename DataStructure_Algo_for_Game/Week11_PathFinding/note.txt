@@ -1,0 +1,4 @@
+Best resources
+
+http://www.geeksforgeeks.org/a-search-algorithm/
+http://qiao.github.io/PathFinding.js/visual/
