@@ -1,6 +1,10 @@
 [
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }
 ]

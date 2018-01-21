@@ -1,38 +1,74 @@
 [
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_switch_track.xml"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_edittext.xml"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_default.xml"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_default.xml"
     },
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_spinner.xml"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_seek_thumb.xml"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_btn_checkable.xml"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_edittext.xml"
     },
     {
-        "merged": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_switch_thumb.xml"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/D:\\pok\\Dropbox\\TNI\\Academic_service\\MUT\\Outline\\Week3\\Lab4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week3/Lab3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_spinner.xml"
     }
 ]
