@@ -16,32 +16,34 @@ public class MainActivity extends AppCompatActivity {
     String msg1 = "Lab3";
     String msg2 = "Activity 1 : ";
     Button btn;
-    EditText edt;
+    //EditText edt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        edt = (EditText)findViewById(R.id.location);
+        //edt = (EditText)findViewById(R.id.location);
         btn = (Button)findViewById(R.id.button);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //Intent intent = new Intent(
-                //        getApplicationContext(),Activity2.class);
+               Intent intent = new Intent(getApplicationContext(),Activity2.class);
+               startActivity(intent);
 
-                String address = edt.getText().toString();
+
+              /*  String address = edt.getText().toString();
                 address = address.replace(' ','+');
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q="+address));
+                */
 
-                startActivity(intent);
             }
         });
         Log.d(msg1, msg2+"onCreate");
     }
+
 
     @Override
     protected void onStart() {
@@ -78,4 +80,5 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.d(msg1, msg2+"onRestart");
     }
+
 }
