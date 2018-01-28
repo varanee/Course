@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{E2C86E91-2C3E-0C31-180B-A94FEB77A270}") = "Network1", "Assembly-CSharp.csproj", "{17CA9DF7-C5AF-3403-B07B-D1CC70E49130}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network1", "Assembly-CSharp.csproj", "{17CA9DF7-C5AF-3403-B07B-D1CC70E49130}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

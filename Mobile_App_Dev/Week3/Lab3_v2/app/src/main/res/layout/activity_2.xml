@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_x="124dp"
         android:layout_y="122dp"
-        android:text="Activity 2"
+        android:text="Show = "
         android:textSize="30sp"
         tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="112dp" />

@@ -9,8 +9,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="116dp"
-        android:layout_y="116dp"
+        android:layout_x="112dp"
+        android:layout_y="34dp"
         android:text="Activity 1"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,9 +24,33 @@
         android:layout_height="93dp"
         android:layout_x="84dp"
         android:layout_y="265dp"
-        android:text="Start Activity 2"
+        android:text="+"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="215dp" />
+
+    <EditText
+        android:id="@+id/input1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="77dp"
+        android:layout_y="124dp"
+        android:ems="10"
+        android:hint="Input num 1"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="143dp" />
+
+    <EditText
+        android:id="@+id/input2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="80dp"
+        android:layout_y="195dp"
+        android:ems="10"
+        android:hint="Input num 2"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="187dp" />
 
 </AbsoluteLayout>

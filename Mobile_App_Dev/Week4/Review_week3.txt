@@ -1,0 +1,11 @@
+??????????????? 3
+
+1. Create a new Android app with two activities (Calculator)
+
+- First activity has 2 EditTexts for inputing 2 numbers, and 1 button (+)
+- Second activity shows the calculated result =.
+
+
+- Add Googlemap cbp details https://developers.google.com/maps/documentation/urls/android-intents
+https://developer.android.com/guide/appendix/g-app-intents.html
+

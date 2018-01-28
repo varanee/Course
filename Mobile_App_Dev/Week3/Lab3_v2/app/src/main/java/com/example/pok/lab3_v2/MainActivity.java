@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     String msg2 = "Activity 1 : ";
     Button btn;
     //EditText edt;
+    float input1 = 0;
+    float input2 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +32,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-               Intent intent = new Intent(getApplicationContext(),Activity2.class);
-               startActivity(intent);
+
+              // Intent intent = new Intent(getApplicationContext(),Activity2.class);
+              // startActivity(intent);
 
 
-              /*  String address = edt.getText().toString();
-                address = address.replace(' ','+');
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q="+address));
-                */
-
+              //String address = edt.getText().toString();
+              //address = address.replace(' ','+');
+              //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q="+address));
+              String  geoCode = "google.streetview:cbll=13.752366, 100.492577&cbp=0,145,0,5,-90";
+              Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoCode));
+              startActivity(intent);
             }
         });
         Log.d(msg1, msg2+"onCreate");
