@@ -23,6 +23,10 @@ public class PlayerController : NetworkBehaviour
 		{
 			CmdFire();
 		}
+
+		Vector3 offset = new Vector3 (0, 0, 0);
+		Camera.main.transform.position = this.transform.position + offset ;
+		Camera.main.transform.rotation = this.transform.rotation;
 	}
 
 	// This [Command] code is called on the Client …
