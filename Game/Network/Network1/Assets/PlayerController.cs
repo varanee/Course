@@ -21,7 +21,7 @@ public class PlayerController : NetworkBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			CmdFire();
+			CmdFire();	
 		}
 
 		Vector3 offset = new Vector3 (0, 0, 0);

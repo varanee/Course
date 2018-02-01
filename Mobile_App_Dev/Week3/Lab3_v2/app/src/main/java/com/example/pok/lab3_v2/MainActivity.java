@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
               //String address = edt.getText().toString();
               //address = address.replace(' ','+');
               //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q="+address));
-              String  geoCode = "google.streetview:cbll=13.752366, 100.492577&cbp=0,145,0,5,-90";
+              String  geoCode = "google.streetview:cbll=13.752366, 100.492577&cbp=0,145,0,5,-15";
               Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoCode));
               startActivity(intent);
             }
