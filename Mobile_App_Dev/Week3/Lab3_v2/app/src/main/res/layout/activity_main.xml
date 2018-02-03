@@ -7,6 +7,20 @@
     tools:context="com.example.pok.lab3_v2.MainActivity">
 
     <TextView
+        android:id="@+id/textView1"
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:layout_x="79dp"
+        android:layout_y="436dp"
+        android:text="Result"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="112dp"
@@ -20,10 +34,10 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="212dp"
-        android:layout_height="93dp"
-        android:layout_x="84dp"
-        android:layout_y="265dp"
+        android:layout_width="156dp"
+        android:layout_height="69dp"
+        android:layout_x="83dp"
+        android:layout_y="338dp"
         android:text="+"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="153dp"
@@ -47,6 +61,18 @@
         android:layout_height="wrap_content"
         android:layout_x="80dp"
         android:layout_y="195dp"
+        android:ems="10"
+        android:hint="Input num 2"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="187dp" />
+
+    <EditText
+        android:id="@+id/input3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="79dp"
+        android:layout_y="267dp"
         android:ems="10"
         android:hint="Input num 2"
         android:inputType="textPersonName"
