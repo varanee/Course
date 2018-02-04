@@ -1,0 +1,122 @@
+//Arduino 
+int i = 0;
+void setup() {
+	Serial.begin(9600);
+}
+
+void loop(){
+	Serial.println(i++);
+	delay(500);
+}
+
+//Python serial
+>>> import serial
+>>> import time
+>>> ser = serial.Serial('COM3', 9600, timeout=0)
+>>> while True:
+...     print ser.readline()
+
+//Plot graph
+sudo apt-get install python-matplotlib
+pip install drawnow
+
+//Start code
+import serial
+import matplotlib.pyplot as plt
+from drawnow import *
+import atexit
+
+values = []
+
+plt.ion()
+cnt=0
+
+serialArduino = serial.Serial('/dev/ttyUSB3', 9600)
+
+def plotValues():
+    plt.title('Serial value from Arduino')
+    plt.grid(True)
+    plt.ylabel('Values')
+    plt.plot(values, 'rx-', label='values')
+    plt.legend(loc='upper right')
+
+def doAtExit():
+    serialArduino.close()
+    print("Close serial")
+    print("serialArduino.isOpen() = " + str(serialArduino.isOpen()))
+
+atexit.register(doAtExit)
+
+print("serialArduino.isOpen() = " + str(serialArduino.isOpen()))
+
+#pre-load dummy data
+for i in range(0,26):
+    values.append(0)
+    
+while True:
+    while (serialArduino.inWaiting()==0):
+        pass
+    print("readline()")
+    valueRead = serialArduino.readline(500)
+
+    #check if valid value can be casted
+    try:
+        valueInInt = int(valueRead)
+        print(valueInInt)
+        if valueInInt <= 1024:
+            if valueInInt >= 0:
+                values.append(valueInInt)
+                values.pop(0)
+                drawnow(plotValues)
+            else:
+                print("Invalid! negative number")
+        else:
+            print("Invalid! too large")
+    except ValueError:
+        print("Invalid! cannot cast")
+
+
+//I2C, master
+#include <Wire.h>
+
+void setup() {
+  Wire.begin(); // join i2c bus (address optional for master)
+}
+
+byte x = 0;
+
+void loop() {
+  Wire.beginTransmission(8); // transmit to device #8
+  Wire.write("x is ");        // sends five bytes
+  Wire.write(x);              // sends one byte
+  Wire.endTransmission();    // stop transmitting
+
+  x++;
+  delay(500);
+}
+
+//Slave
+#include <Wire.h>
+
+void setup() {
+  Wire.begin(8);                // join i2c bus with address #8
+  Wire.onReceive(receiveEvent); // register event
+  Serial.begin(9600);           // start serial for output
+}
+
+void loop() {
+  delay(100);
+}
+
+// function that executes whenever data is received from master
+// this function is registered as an event, see setup()
+void receiveEvent(int howMany) {
+  while (1 < Wire.available()) { // loop through all but the last
+    char c = Wire.read(); // receive byte as a character
+    Serial.print(c);         // print the character
+  }
+  int x = Wire.read();    // receive byte as an integer
+  Serial.println(x);         // print the integer
+}
+
+

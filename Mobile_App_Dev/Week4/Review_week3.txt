@@ -22,8 +22,26 @@ Review week 3 (20 mins)
 Exercise
 https://goo.gl/ivN2B1  
 HW1
-Activity1--> Num1, num2, ans
-Activity2 return "True" or "False"
+
+
+Example https://goo.gl/C1Ydzm
+
+Activity1-->
+	AbsoluteLayout
+	- EditText num1, num2, answer.
+	- Button (Sum).
+	- TextView result.
+	Function
+	- startActivityForResult
+	- onActivityResult
+
+Activity2-->
+	- No User Interface
+	Sum num1 and num2 and compare the result with answer then	
+	return "True" or "False" to Activity 1
+	Function
+	- setResult
+	- finish
 
 
 
