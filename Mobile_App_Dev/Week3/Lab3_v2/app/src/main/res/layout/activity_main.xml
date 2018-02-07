@@ -8,10 +8,10 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="228dp"
+        android:layout_width="156dp"
         android:layout_height="wrap_content"
-        android:layout_x="79dp"
-        android:layout_y="436dp"
+        android:layout_x="89dp"
+        android:layout_y="441dp"
         android:text="Result"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,5 +78,14 @@
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="59dp"
         tools:layout_editor_absoluteY="187dp" />
+
+    <NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="305dp"
+        android:layout_y="319dp"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="400dp" />
 
 </AbsoluteLayout>

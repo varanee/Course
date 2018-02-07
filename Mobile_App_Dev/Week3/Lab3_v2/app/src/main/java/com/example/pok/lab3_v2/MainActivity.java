@@ -8,11 +8,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.net.URI;
 
-public class MainActivity extends AppCompatActivity {
+import hotchemi.stringpicker.StringPicker;
+import hotchemi.stringpicker.StringPickerDialog;
+
+public class MainActivity extends AppCompatActivity implements StringPickerDialog.OnClickListener {
 
     String msg1 = "Lab3";
     String msg2 = "Activity 1 : ";
@@ -38,9 +43,32 @@ public class MainActivity extends AppCompatActivity {
         ans = (EditText)findViewById(R.id.input3);
         result = (TextView)findViewById(R.id.textView1);
 
+        final NumberPicker pickers = (NumberPicker)findViewById(R.id.numberPicker);
+        final String[] arrayPicker= new String[]{"abc","def","ghi","jkl","mno"};
+
+        //set min value zero
+        pickers.setMinValue(0);
+        //set max value from length array string reduced 1
+        pickers.setMaxValue(arrayPicker.length - 1);
+        //implement array string to number picker
+        pickers.setDisplayedValues(arrayPicker);
+        //disable soft keyboard
+        pickers.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        //set wrap true or false, try it you will know the difference
+        pickers.setWrapSelectorWheel(false);
+
+        pickers.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+               result.setText(arrayPicker[picker.getValue()]);
+            }
+        });
+
+
         sumBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
               String input1 = num1.getText().toString();
               String input2 = num2.getText().toString();
@@ -50,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
               Intent intent = new Intent(getApplicationContext(),Activity2.class);
               intent.putExtra("msgs",msgs);
               startActivityForResult(intent,1234);
+
+
 
               // Intent intent = new Intent(getApplicationContext(),Activity2.class);
               // startActivity(intent);
@@ -66,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         Log.d(msg1, msg2+"onCreate");
+    }
+
+    @Override
+    public void onClick(String value) {
+
     }
 
     @Override
@@ -113,5 +148,6 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.d(msg1, msg2+"onRestart");
     }
+
 
 }
