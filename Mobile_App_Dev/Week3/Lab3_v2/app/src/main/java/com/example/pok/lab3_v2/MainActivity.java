@@ -43,26 +43,8 @@ public class MainActivity extends AppCompatActivity implements StringPickerDialo
         ans = (EditText)findViewById(R.id.input3);
         result = (TextView)findViewById(R.id.textView1);
 
-        final NumberPicker pickers = (NumberPicker)findViewById(R.id.numberPicker);
-        final String[] arrayPicker= new String[]{"abc","def","ghi","jkl","mno"};
 
-        //set min value zero
-        pickers.setMinValue(0);
-        //set max value from length array string reduced 1
-        pickers.setMaxValue(arrayPicker.length - 1);
-        //implement array string to number picker
-        pickers.setDisplayedValues(arrayPicker);
-        //disable soft keyboard
-        pickers.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
-        //set wrap true or false, try it you will know the difference
-        pickers.setWrapSelectorWheel(false);
 
-        pickers.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-               result.setText(arrayPicker[picker.getValue()]);
-            }
-        });
 
 
         sumBtn.setOnClickListener(new View.OnClickListener() {

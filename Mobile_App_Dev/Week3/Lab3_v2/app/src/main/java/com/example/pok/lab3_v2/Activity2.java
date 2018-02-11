@@ -31,7 +31,6 @@ public class Activity2 extends AppCompatActivity {
         intent.putExtra("result",returnResult);
         setResult(1234,intent);
         finish();//finishing activity
-
     }
 
     @Override

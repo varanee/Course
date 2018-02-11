@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Terrain.unity
+    guid: 64d4711e24c53442da75ae50989d209f
+  - enabled: 1
+    path: Assets/RedFloor.unity
+    guid: 38fc96d0e92c44ddfa6970be640cee23
