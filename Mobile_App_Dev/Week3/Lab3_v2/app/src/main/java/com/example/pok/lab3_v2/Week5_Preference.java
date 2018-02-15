@@ -67,6 +67,7 @@ public class Week5_Preference extends AppCompatActivity {
             }
         });
 
+
         final SharedPreferences shared = getApplicationContext().
                 getSharedPreferences(myPref, Context.MODE_PRIVATE);
 

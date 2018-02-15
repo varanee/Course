@@ -14,10 +14,8 @@ import android.widget.Toast;
 
 import java.net.URI;
 
-import hotchemi.stringpicker.StringPicker;
-import hotchemi.stringpicker.StringPickerDialog;
 
-public class MainActivity extends AppCompatActivity implements StringPickerDialog.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     String msg1 = "Lab3";
     String msg2 = "Activity 1 : ";
@@ -42,10 +40,6 @@ public class MainActivity extends AppCompatActivity implements StringPickerDialo
         num2 = (EditText)findViewById(R.id.input2);
         ans = (EditText)findViewById(R.id.input3);
         result = (TextView)findViewById(R.id.textView1);
-
-
-
-
 
         sumBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,11 +72,6 @@ public class MainActivity extends AppCompatActivity implements StringPickerDialo
             }
         });
         Log.d(msg1, msg2+"onCreate");
-    }
-
-    @Override
-    public void onClick(String value) {
-
     }
 
     @Override
