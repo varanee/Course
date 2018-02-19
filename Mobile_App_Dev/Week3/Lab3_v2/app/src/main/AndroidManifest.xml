@@ -11,15 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Activity2" />
+        <activity android:name=".Week5_Preference"></activity>
+        <activity android:name=".FireBaseActivity">
         </activity>
-        <activity android:name=".Activity2"></activity>
-        <activity android:name=".Week5_Preference">
+        <activity android:name=".Week7_File">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
