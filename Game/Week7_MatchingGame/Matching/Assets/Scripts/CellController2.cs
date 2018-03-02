@@ -20,32 +20,38 @@ public class CellController2 : MonoBehaviour
 			Application.Quit(); 
 	}
 
+	//When mouse is over
 	void OnMouseOver()
 	{
-		if (Input.GetMouseButtonDown(0))
+		//When mouse is clicked
+		if (Input.GetMouseButtonDown(0) && Global2.isAllowToClick)
 		{         
-			if (Global2.PIC_MATCHES.Count < 2)
-			{
-				Global2.audioSources[0].Play();       
-				int cellIndex = 0;
-				if(this.name.Length == 2) //c0, ..., c9
-				{
-					cellIndex = int.Parse(this.name[1].ToString());
-				}
-				else //c10,...,c15
-				{
-					string sIndex = this.name[1].ToString() + this.name[2].ToString();
-					cellIndex = int.Parse(sIndex);
-				}
+			//Debug.Log ("Num of picked match = " + Global2.PIC_MATCHES.Count);
+			int cellIndex = int.Parse (this.name.Remove (0, 1));
 
-				if (Global2.MATCH_CHK[cellIndex] == 0)
-				{
-					int frameIndex = Global2.CELLS[cellIndex];
-					float frameNormalized = frameIndex / 9.0f;
-					animator.Play("cellAnim", 0, frameNormalized);
-					Global2.PIC_MATCHES.Add(frameIndex);
-					Global2.CELL_MATCHES.Add(cellIndex);
-				}
+			if (Global2.MATCH_CHK [cellIndex] == 1)
+				return;
+
+			Global2.audioSources [0].Play ();
+			int frameIndex = Global2.CELLS [cellIndex];
+			float frameNormalized = frameIndex / 9.0f;
+			animator.Play ("cellAnim", 0, frameNormalized);
+			AnimatorStateInfo animationState = animator.GetCurrentAnimatorStateInfo(0);
+			AnimatorClipInfo[] myAnimatorClip = animator.GetCurrentAnimatorClipInfo(0);
+			float currentFrame = myAnimatorClip[0].clip.length * animationState.normalizedTime;
+
+			/*Debug.Log (Global2.PIC_MATCHES.Count);
+			Debug.Log (Global2.MATCH_CHK [cellIndex]);
+			Debug.Log (currentFrame);*/
+
+			//If open one cell, and can click, and is blank cell
+			if (Global2.PIC_MATCHES.Count < 2 && Global2.MATCH_CHK [cellIndex] == 0 && currentFrame == 0f) {
+				Debug.Log ("Click first");
+				Global2.PIC_MATCHES.Add (frameIndex);
+				Global2.CELL_MATCHES.Add (cellIndex);
+			
+			} else {
+				Debug.Log ("Click twice on the open cell");
 			}
 		}
 	}

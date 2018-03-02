@@ -59,32 +59,38 @@ public class Global2 : MonoBehaviour
 		}
 	} //End start()
 
+	public static bool isAllowToClick = true;
+
 	void Update()
 	{
 		if (Global2.PIC_MATCHES.Count == 2)
 		{
+			//Debug.Log ("Global2 Update");
 			if (Global2.PIC_MATCHES[0].Equals(Global2.PIC_MATCHES[1]))
 			{
 				audioSources[1].Play();
-				MATCH_CHK[int.Parse(Global2.CELL_MATCHES[0].ToString())] = 1;
-				MATCH_CHK[int.Parse(Global2.CELL_MATCHES[1].ToString())] = 1;
+				Global2.MATCH_CHK[int.Parse(Global2.CELL_MATCHES[0].ToString())] = 1;
+				Global2.MATCH_CHK[int.Parse(Global2.CELL_MATCHES[1].ToString())] = 1;
 				Global2.PIC_MATCHES.Clear();
 				Global2.CELL_MATCHES.Clear();
 			}
 			else
 			{
+				isAllowToClick = false;
 				delayTime += Time.deltaTime;
-				if (delayTime > 1f)
+				if (delayTime > 1f) //Wait 1 sec, then return to blank cell
 				{
+					Debug.Log ("Not match");
 					delayTime = 0f;
 					for (int i = 0; i < 2; i++)
 					{
 						int cellIndex = int.Parse(Global2.CELL_MATCHES[i].ToString());
 						GameObject go = GameObject.Find("c" + cellIndex);
-						go.GetComponent<Animator>().Play("cellAnim", 0, 0.1f);
+						go.GetComponent<Animator>().Play("cellAnim", 0, 0.0f);
 					}
 					Global2.PIC_MATCHES.Clear();
 					Global2.CELL_MATCHES.Clear();
+					isAllowToClick = true;
 				}
 			}
 		}
