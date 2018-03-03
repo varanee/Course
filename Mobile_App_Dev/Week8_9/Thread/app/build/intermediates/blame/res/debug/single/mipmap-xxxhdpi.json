@@ -1,10 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\pok\\AndroidStudioProjects\\Thread\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
-        "source": "C:\\Users\\pok\\AndroidStudioProjects\\Thread\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "D:\\Google Drive\\Classroom\\Mobile App Dev\\MUT\\Outline\\Week8_9\\Thread\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
-        "source": "D:\\Google Drive\\Classroom\\Mobile App Dev\\MUT\\Outline\\Week8_9\\Thread\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/C:\\Users\\pok\\AndroidStudioProjects\\Thread\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/C:\\Users\\pok\\AndroidStudioProjects\\Thread\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/D:\\Google Drive\\Classroom\\Mobile App Dev\\MUT\\Outline\\Week8_9\\Thread\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/D:\\Google Drive\\Classroom\\Mobile App Dev\\MUT\\Outline\\Week8_9\\Thread\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     }
 ]

@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar pb;
 
     //4
-    ImageView imv;
+    //ImageView imv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +39,13 @@ public class MainActivity extends AppCompatActivity {
         pb = (ProgressBar)findViewById(R.id.progressBar3);
 
         //4
-        imv = (ImageView)findViewById(R.id.imageView2);
+        //imv = (ImageView)findViewById(R.id.imageView2);
         //imv.setImageResource(R.drawable.mario);
         //Picasso.with(this).load("http://i.imgur.com/DvpvklR.png").placeholder(R.drawable.mario).into(imv);
         //Picasso.with(this).setLoggingEnabled(true);
+
+
+
 
 
         runBtn.setOnClickListener(new View.OnClickListener() {
@@ -50,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //1 show sequential
-                /*
-                outputStr += "\n";
+               /* outputStr += "\n";
                 for(int i=0; i<5; i++){
                     outputStr += "A";
                 }
@@ -59,11 +61,22 @@ public class MainActivity extends AppCompatActivity {
                 for(int i=0; i<5; i++){
                     outputStr += "B";
                 }
+
                 tv1.setText(outputStr);
-                */
+*/
+
+
+
+
+
+
+
+
+
+
 
                 //2. show thread, e.g., load image A & B (B not neet to wait A to finish)
-                /*
+
                 outputStr += "\n";
                 new Thread(new Runnable(){
                     public void run() {
@@ -81,7 +94,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).start();
                 tv1.setText(outputStr);
-                */
+
+
+
+
+
+
+
+
+
+
 
                 // 3. Access UI thread from outside the UI.
                 // How to update textbox value in delay
@@ -131,25 +153,25 @@ public class MainActivity extends AppCompatActivity {
 
                 //6. Image
                 //new LoadImageTask("http://i.imgur.com/DvpvklR.png",pb).execute(imv);
-                new LoadImageTask("https://worldstrides.com/wp-content/uploads/2015/07/12-Chureito-pagoda-and-Mount-Fuji-Japan.jpg",pb).execute(imv);
+                /*new LoadImageTask("https://worldstrides.com/wp-content/uploads/2015/07/12-Chureito-pagoda-and-Mount-Fuji-Japan.jpg",pb).execute(imv);
                 new Thread(new Runnable(){
                     public void run(){
                         try {
-                         /*   URL newurl = new URL("https://api.learn2crack.com/android/images/donut.png");
+                            URL newurl = new URL("https://api.learn2crack.com/android/images/donut.png");
                             final Bitmap bitmap = BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
 
                             imv.post(new Runnable() {
                                 public void run() {
                                     imv.setImageBitmap(bitmap);
                                 }
-                            }); */
+                            });
 
                               }catch(Exception e){
 
                         }
                     }
                 }).start();
-
+                */
             }
         });
     }

@@ -56,3 +56,4 @@
 /home/pok/pokekarat/Course/Game/Week7_MatchingGame/Matching/Temp/bin/Debug/Unity.CecilTools.dll
 /home/pok/pokekarat/Course/Game/Week7_MatchingGame/Matching/Temp/bin/Debug/Unity.Cecil.Pdb.dll
 /home/pok/pokekarat/Course/Game/Week7_MatchingGame/Matching/Temp/bin/Debug/Unity.Cecil.Mdb.dll
+/home/pok/pokekarat/Course/Game/Week7_MatchingGame/Matching/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs

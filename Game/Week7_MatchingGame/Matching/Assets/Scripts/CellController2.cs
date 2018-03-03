@@ -7,7 +7,7 @@ public class CellController2 : MonoBehaviour
 	Animator animator;
 
 	// Use this for initialization
-	void Start()
+	void Awake()
 	{
 		animator = this.GetComponent<Animator>();
 		animator.speed = 0f;
@@ -28,30 +28,30 @@ public class CellController2 : MonoBehaviour
 		{         
 			//Debug.Log ("Num of picked match = " + Global2.PIC_MATCHES.Count);
 			int cellIndex = int.Parse (this.name.Remove (0, 1));
+			Debug.Log ("cell index = " + cellIndex);
 
 			if (Global2.MATCH_CHK [cellIndex] == 1)
 				return;
-
-			Global2.audioSources [0].Play ();
+			
+			//Global2.audioSources [0].Play ();
 			int frameIndex = Global2.CELLS [cellIndex];
 			float frameNormalized = frameIndex / 9.0f;
 			animator.Play ("cellAnim", 0, frameNormalized);
 			AnimatorStateInfo animationState = animator.GetCurrentAnimatorStateInfo(0);
 			AnimatorClipInfo[] myAnimatorClip = animator.GetCurrentAnimatorClipInfo(0);
 			float currentFrame = myAnimatorClip[0].clip.length * animationState.normalizedTime;
-
-			/*Debug.Log (Global2.PIC_MATCHES.Count);
-			Debug.Log (Global2.MATCH_CHK [cellIndex]);
-			Debug.Log (currentFrame);*/
+			Debug.Log ("current frame "+currentFrame);
+		
 
 			//If open one cell, and can click, and is blank cell
 			if (Global2.PIC_MATCHES.Count < 2 && Global2.MATCH_CHK [cellIndex] == 0 && currentFrame == 0f) {
-				Debug.Log ("Click first");
+				//Debug.Log ("Click first");
+				Debug.unityLogger.Log("Click first");
 				Global2.PIC_MATCHES.Add (frameIndex);
 				Global2.CELL_MATCHES.Add (cellIndex);
 			
 			} else {
-				Debug.Log ("Click twice on the open cell");
+				Debug.unityLogger.Log ("Click twice on the open cell");
 			}
 		}
 	}

@@ -2,85 +2,67 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="D:\android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_0740e35b1562f687139862cca605a1202e2f94d0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_542beddca1f5920113e3d3e205114e9115bfd2b6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_b5aa54b57c725c1460035176d4f8f90f75842553\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b9852827e0c97499c068525a868c25eaa8966c89">
-        <dex dex="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_1414618fb6f4b255143112b8efdf31202511c3f3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\pok\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_e9defdcc6ff58919d111092bee60812b80baedc6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_cb6caeccfcdb83762da1e1561015e3904af64711\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_b6a2770f1281ed3deddc92de83842631ad1aac8d\classes.dex" />
+        <dex dex="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_1f6b1ecf0cbcdb63c363cd7452742c48ef60221a.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_8cfc55e12ea6fdf3588750f28f35bc8b98cefbe8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_27deef99e70b33ca1d26ff21f9428a7d3a15306c\classes.dex" />
+        <dex dex="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_d3519e5e72d3a3938c628a34115d87d04f0eccd1.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="5bafa718c6199e69a0d0f7b082269ab6c5adf342">
-        <dex dex="C:\Users\pok\AndroidStudioProjects\Thread\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_6e42319ef9d00925d2146ba12ca3ed52a269c510\classes.dex" />
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_35586a3e635ca187ad260e0d581dfa6174808134.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pok/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_055ca346a056edf6891fb21b9e1c12a273f711a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pok/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_29697fc4962bce427294fef341cd5b43bd194c10.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/home/pok/pokekarat/Course/Mobile_App_Dev/Week8_9/Thread/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_13ebdc30c4bebe8fc8717d7674b5bc85c89681f6.jar" />
     </item>
 
 </items>
