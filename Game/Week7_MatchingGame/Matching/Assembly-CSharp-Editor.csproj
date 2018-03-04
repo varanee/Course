@@ -73,18 +73,8 @@
      <Compile Include="Assets\Editor\TreeMapView.cs" />
      <Compile Include="Assets\Editor\TypeTools.cs" />
      <Compile Include="Assets\Editor\ZoomArea.cs" />
-     <Compile Include="Assets\FarseerUnity\Editor\Base\CollisionGroupAsset.cs" />
-     <Compile Include="Assets\FarseerUnity\Editor\Base\FSCollisionGroupEditor.cs" />
-     <Compile Include="Assets\FarseerUnity\Editor\CustomAssetUtility.cs" />
-     <Compile Include="Assets\FarseerUnity\Editor\FSConcaveShapeCpEditor.cs" />
-     <Compile Include="Assets\FarseerUnity\Editor\FSSettings.cs" />
-     <Compile Include="Assets\FarseerUnity\Editor\FSShapeCpEditor.cs" />
-     <Compile Include="Assets\FarseerUnity\Editor\Windows\FSProjectSettingsWindow.cs" />
      <None Include="Assets\Editor\JsonDotNet20\Newtonsoft.Json.xml" />
      <None Include="Assets\Editor\JsonDotNet20\license.txt" />
-     <None Include="Assets\FarseerUnity\Base\FarseerDebugViewUnity\FDView.shader" />
-     <None Include="Assets\FarseerUnity\Support Files\Tests\Shaders\Color.shader" />
-     <None Include="Assets\FarseerUnity\Support Files\Tests\Shaders\Transparent Vertex Colored.shader" />
      <None Include="Assets\Editor\JsonDotNet20\readme.txt" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>/home/pok/pokekarat/Course/Game/Week7_MatchingGame/Matching/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>

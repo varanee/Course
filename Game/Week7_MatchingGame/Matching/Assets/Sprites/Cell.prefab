@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212241859898230344}
   - component: {fileID: 95811342706007524}
   - component: {fileID: 61620537116379578}
-  - component: {fileID: 114915518572459064}
+  - component: {fileID: 114249797398106490}
   m_Layer: 0
   m_Name: Cell
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198048907370944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.304937, y: -4.8970604, z: 0}
+  m_LocalPosition: {x: -77.76069, y: -56.51883, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,7 +85,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114915518572459064
+--- !u!114 &114249797398106490
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1198048907370944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1495846ec3cec4413925a03628157c91, type: 3}
+  m_Script: {fileID: 11500000, guid: c7c827e8311ec4f92a72abc81b04dc69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212241859898230344
