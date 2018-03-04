@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
 	private Text levelText;
 	private GameObject levelImage;
+	private GameObject mainMenuImage;
 	private bool doingSetup;
 	private int level = 1;
 
@@ -40,45 +41,43 @@ public class GameManager : MonoBehaviour
 
 	void Awake()
 	{
-		InitGame ();
+		//InitGame ();
+		launchMainMenu();
 	}
 
+	void launchMainMenu(){
+		mainMenuImage = GameObject.Find ("MainMenu");
+		mainMenuImage.SetActive (true);
+	}
+
+	public void startGame(){
+		InitGame ();
+	}
 
 	private void OnLevelWasLoaded()
 	{
 		level++;
-
 		InitGame2();
 	}
 
 	void InitGame()
 	{
+		mainMenuImage.SetActive (false);
 		doingSetup = true;
 		levelImage = GameObject.Find ("LevelImage");
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
 		levelText.text = "Level " + level;
 		levelImage.SetActive (true);
 		Invoke ("HideLevelImage", levelStartDelay);
-
-		//Clear old resource
-		//Set up new resource
-		//resetResource();
 	}
 
 	void InitGame2()
 	{
 		doingSetup = true;
-
-		//levelImage = GameObject.Find ("LevelImage");
-		//levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
 		levelText.text = "Level " + level;
 		levelImage.SetActive (true);
 		resetResource();
 		Invoke ("HideLevelImage", levelStartDelay);
-
-		//Clear old resource
-		//Set up new resource
-
 	}
 
 	void resetResource()
@@ -163,6 +162,9 @@ public class GameManager : MonoBehaviour
 
 	void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.Escape)) 
+			Application.Quit(); 
+		
 		if (PIC_MATCHES.Count == 2 && !doingSetup)
 		{
 			//Debug.Log ("Global2 Update");

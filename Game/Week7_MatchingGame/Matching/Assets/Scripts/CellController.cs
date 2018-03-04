@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CellController : MonoBehaviour
 {
-
+	
 	Animator animator;
 
 	// Use this for initialization
@@ -11,13 +11,6 @@ public class CellController : MonoBehaviour
 	{
 		animator = this.GetComponent<Animator>();
 		animator.speed = 0f;
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Escape)) 
-			Application.Quit(); 
 	}
 
 	//When mouse is over
