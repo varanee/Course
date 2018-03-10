@@ -3,7 +3,7 @@
     package="com.example.pok.lab3_v2">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,15 +14,17 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Activity2" />
         <activity android:name=".Week5_Preference" />
-        <activity android:name=".FireBaseActivity"></activity>
-        <activity android:name=".Week7_File">
-        </activity>
-        <activity android:name=".Week8_DBActivity">
+        <activity android:name=".FireBaseActivity" />
+        <activity android:name=".Week7_File" />
+        <activity android:name=".Week8_DBView" />
+        <activity android:name=".DB_MainApp" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Week8_DBAdd"></activity>
     </application>
 
 </manifest>

@@ -1,10 +1,12 @@
 package com.example.pok.lab3_v2;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -17,11 +19,13 @@ public class CustomAdapter extends BaseAdapter {
 
     String[] strName;
     String[] phoneNum;
+    String[] imgPath;
 
-    public CustomAdapter(Context context, String[] strName, String[] phoneNum){
+    public CustomAdapter(Context context, String[] strName, String[] phoneNum, String[] imgPath){
         mContext = context;
         this.strName = strName;
         this.phoneNum = phoneNum;
+        this.imgPath = imgPath;
     }
 
     @Override
@@ -51,6 +55,9 @@ public class CustomAdapter extends BaseAdapter {
 
         TextView textView2 = (TextView)convertView.findViewById(R.id.textView2);
         textView2.setText(phoneNum[position]);
+
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView2);
+        imageView.setImageBitmap(BitmapFactory.decodeFile(imgPath[position]));
 
         return convertView;
     }

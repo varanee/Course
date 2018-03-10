@@ -9,5 +9,6 @@ public class Contact {
     public int _id;
     public String _name;
     public String _phone_number;
+    public String _img_path;
 
 }

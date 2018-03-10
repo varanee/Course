@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pok.lab3_v2.Week8_DBActivity">
+    tools:context="com.example.pok.lab3_v2.Week8_DBView">
 
     <ListView
         android:id="@+id/listView1"
