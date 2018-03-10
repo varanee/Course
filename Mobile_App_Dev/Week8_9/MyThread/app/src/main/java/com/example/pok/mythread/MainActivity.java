@@ -3,6 +3,7 @@ package com.example.pok.mythread;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,42 +35,38 @@ public class MainActivity extends AppCompatActivity {
 
         runBtn = findViewById(R.id.button1);
         tv1 = findViewById(R.id.tv1);
-
-        runBtn2 = findViewById(R.id.button2);
-        tv2 = findViewById(R.id.tv2);
-
-        //3
         pb = findViewById(R.id.progressBar);
-
-        //4
         imv = findViewById(R.id.imageView);
 
         //imv.setImageResource(R.drawable.mario);
         //Picasso.with(this).load("http://i.imgur.com/DvpvklR.png").placeholder(R.drawable.mario).into(imv);
         //Picasso.with(this).setLoggingEnabled(true);
 
-
-        runBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tv2.setText("Press");
-            }
-        });
-
-
         runBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                /*
                 example1();
                 example2();
                 example3();
                 example4();
                 example5();
                 example6();
+                */
+
+                example7();
 
             }
         });
+    }
+
+    private void example7() {
+
+        String img2 = "https://static.pexels.com/photos/103567/pexels-photo-103567.jpeg";
+        new LoadImageTask(imv,pb).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,img2);
+        // new LoadImageTask(imv,pb).execute(img2);
+
     }
 
     private void example6() {
@@ -78,20 +77,19 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             public void run() {
                 try {
-
                     URL newurl = new URL("https://api.learn2crack.com/android/images/donut.png");
-                    final Bitmap bitmap =
-                            BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
+                    final Bitmap bitmap = BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
 
                     imv.post(new Runnable() {
                         public void run() {
-
                             imv.setImageBitmap(bitmap);
                         }
                     });
-
-                } catch (Exception e) {
                 }
+                catch (Exception e)
+                {
+                }
+
             }
         }).start();
     }
