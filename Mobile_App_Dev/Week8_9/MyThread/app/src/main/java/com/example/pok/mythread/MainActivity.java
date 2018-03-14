@@ -13,7 +13,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -26,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     String outputStr = "";
     ProgressBar pb;
     ImageView imv;
-
+    ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
+    int i = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -46,19 +50,36 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                /*
-                example1();
-                example2();
-                example3();
-                example4();
+                outputStr += "\n";
+
+
+
+
+
+                //example1();
+                //example2();
+                //example3();
+                //example4();
                 example5();
-                example6();
-                */
-
-                example7();
-
-            }
+                //example6();
+                //example7();
+                            }
         });
+    }
+
+    private void example1() {
+
+        //1 show sequential
+
+        for (int i = 0; i < 5; i++) {
+            outputStr += "A";
+        }
+
+        for (int i = 0; i < 5; i++) {
+            outputStr += "B";
+        }
+
+        tv1.setText(outputStr);
     }
 
     private void example7() {
@@ -78,11 +99,27 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     URL newurl = new URL("https://api.learn2crack.com/android/images/donut.png");
-                    final Bitmap bitmap = BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
-
+                    //final Bitmap bitmap = BitmapFactory.
+                    //        decodeStream(newurl.openConnection().getInputStream());
+                    HttpURLConnection con = (HttpURLConnection)newurl.openConnection();
+                    InputStream is = con.getInputStream();
+                    int imgSize = con.getContentLength();
+                    byte[] buffer = new byte[1024];
+                    int len = 0;
+                    int sum = 0;
+                    while ((len = is.read(buffer)) > 0)//)
+                    {
+                        byteBuffer.write(buffer,0,len);
+                        sum += len;
+                        float percent = (sum*100.0f)/imgSize;
+                        pb.setProgress((int)percent);
+                        //tv1.setText((int)percent);
+                    }
+                     //runOnUiThread();
                     imv.post(new Runnable() {
                         public void run() {
-                            imv.setImageBitmap(bitmap);
+                            Bitmap bmp = BitmapFactory.decodeByteArray(byteBuffer.toByteArray(),0,byteBuffer.size());
+                            imv.setImageBitmap(bmp);
                         }
                     });
                 }
@@ -98,8 +135,8 @@ public class MainActivity extends AppCompatActivity {
         //4. Add progressbar
         new Thread(new Runnable() {
             public void run() {
-                for (int i = 0; i <= 10; i++) {
-                    final int value = i * 10;
+                for (int i = 0; i <= 100; i++) {
+                    final int value = i;
                     doFakeWork();
                     pb.post(new Runnable() {
                         @Override
@@ -125,15 +162,9 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             tv1.setText("" + value);
-                            pb.setProgress(value);
                         }
                     });
-
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    doFakeWork();
                 }
             }
         }).start();
@@ -142,38 +173,27 @@ public class MainActivity extends AppCompatActivity {
     private void example2() {
         //2. show thread, e.g., load image A & B (B not neet to wait A to finish)
 
-        outputStr += "\n";
+
         new Thread(new Runnable() {
             public void run() {
-                for (int i = 0; i < 5000; i++) {
-                    outputStr = "A";
+                for (int i = 0; i < 5; i++) {
+                    outputStr += "A";
                 }
             }
         }).start();
 
         new Thread(new Runnable() {
             public void run() {
-                for (int i = 0; i < 5000000; i++) {
-                    outputStr = "B";
+                for (int i = 0; i < 5; i++) {
+                    outputStr += "B";
                 }
             }
         }).start();
-        tv1.setText(outputStr);
-    }
-
-    private void example1() {
-        //1 show sequential
-        outputStr += "\n";
-        for (int i = 0; i < 5000000; i++) {
-            outputStr = "A";
-        }
-
-        for (int i = 0; i < 5000000; i++) {
-            outputStr = "B";
-        }
 
         tv1.setText(outputStr);
     }
+
+
     //3
     private void doFakeWork() {
         try {
