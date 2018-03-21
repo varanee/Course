@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 //example2();
                 //example3();
                 //example4();
-                example5();
+                //example5();
                 //example6();
-                //example7();
+                example7();
                             }
         });
     }
@@ -84,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void example7() {
 
-        String img2 = "https://static.pexels.com/photos/103567/pexels-photo-103567.jpeg";
-        new LoadImageTask(imv,pb).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,img2);
-        // new LoadImageTask(imv,pb).execute(img2);
+        String imgUrl = "https://static.pexels.com/photos/103567/pexels-photo-103567.jpeg";
+        //new LoadImageTask(imv,pb).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,img2);
+         new LoadImageTask(imv,pb).execute(imgUrl);
 
     }
 

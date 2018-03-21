@@ -11,25 +11,20 @@ public class MyTask extends AsyncTask <String,Integer,String> {
 
     TextView tv1;
 
-    MyTask(TextView tv){
-        tv1 = tv;
-    }
+    MyTask(TextView tv){ tv1 = tv; }
 
-    @Override
-    protected void onPreExecute() { }
+    /*@Override
+    protected void onPreExecute() { }*/
 
     //Implement progressbar by using AsyncTask
     @Override
     protected String doInBackground(String... params) {
 
-        String myString = params[0];
-
+       // String myString = params[0];
         for (int i = 1; i <= 10; i++) {
-
             publishProgress(i);
             doSleepFor();
         }
-
         return "End loop";
     }
 
@@ -41,7 +36,6 @@ public class MyTask extends AsyncTask <String,Integer,String> {
         }
     }
 
-
     @Override
     protected void onProgressUpdate(Integer... values) {
         tv1.setText(values[0].toString());
@@ -49,8 +43,5 @@ public class MyTask extends AsyncTask <String,Integer,String> {
 
     @Override
     protected void onPostExecute(String s) {
-        tv1.setText(s);
-    }
-
-
+        tv1.setText(s);  }
 }
