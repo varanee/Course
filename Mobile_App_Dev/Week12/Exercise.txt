@@ -3,3 +3,26 @@ Name, position, club
 
 Send data to server
 http://blog.appliedinformaticsinc.com/sending-json-data-to-server-using-async-thread/
+
+Example of Android+Json
+https://code.tutsplus.com/tutorials/android-from-scratch-using-rest-apis--cms-27117
+
+Others
+https://programmerblog.net/nodejs-mongodb-rest-api/
+https://medium.com/of-all-things-tech-progress/5-steps-to-build-a-rest-api-in-node-js-with-mongodb-e1f2113a39bd
+https://getstream.io/blog/building-rest-api-node-js-restify-mongodb/
+https://www.codementor.io/olatundegaruba/nodejs-restful-apis-in-10-minutes-q0sgsfhbd
+https://goo.gl/6p5tdY
+
+MERN stack
+https://github.com/bryantheastronaut/mernCommentBox
+https://blog.cloudboost.io/creating-your-first-mern-stack-application-b6604d12e4d3
+https://appdividend.com/2017/06/28/mern-stack-tutorial/
+
+React cms
+https://hackernoon.com/want-to-get-started-with-flamelink-a-firebase-cms-right-now-2eb93d6d7be9
+https://hackernoon.com/how-i-built-a-content-management-system-for-a-react-app-in-one-day-269df17f5509
+https://github.com/adamarthurryan/react-firebase-simple-cms
+
+
+
