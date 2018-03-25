@@ -8,10 +8,9 @@
 
     <com.example.pok.lab3_v2.DrawableView
         android:id="@+id/house"
-        android:layout_width="67dp"
-        android:layout_height="65dp"
-        android:layout_x="120dp"
-        android:layout_y="71dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 
 </AbsoluteLayout>

@@ -1,10 +1,13 @@
-#include <MicroGear.h>
-#include <ESP8266WiFi.h>
-#include <DHT.h>
+#include <MicroGear.h> //Download library from Managed library
+#include <ESP8266WiFi.h> 
+#include <DHT.h> //Download library from Managed library
+
 const char* ssid     = "true_home2G_306";
 const char* password = "BEXAPNQR";
 
 #define APPID   "PokSmartHome"
+
+//Device keys
 #define KEY     "ISCEQt5eYkKvM8g"
 #define SECRET  "kBpkHBGIERfCUk1oFZ5sYGprg"
 
@@ -80,3 +83,4 @@ void loop()
    }
     delay(1500);
 }
+
