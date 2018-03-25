@@ -1,5 +1,5 @@
 #include <MicroGear.h> //Download library from Managed library
-#include <ESP8266WiFi.h> 
+#include <ESP8266WiFi.h> //Follow instructions here https://netpie.gitbooks.io/nodemcu-esp8266-on-netpie/content/chapter1.html
 #include <DHT.h> //Download library from Managed library
 
 const char* ssid     = "true_home2G_306";
