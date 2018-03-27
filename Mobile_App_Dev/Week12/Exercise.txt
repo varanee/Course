@@ -6,6 +6,7 @@ http://blog.appliedinformaticsinc.com/sending-json-data-to-server-using-async-th
 
 Example of Android+Json
 https://code.tutsplus.com/tutorials/android-from-scratch-using-rest-apis--cms-27117
+https://www.tutorialspoint.com/android/android_json_parser.htm
 
 Others
 https://programmerblog.net/nodejs-mongodb-rest-api/
