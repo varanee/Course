@@ -8,6 +8,9 @@ Example of Android+Json
 https://code.tutsplus.com/tutorials/android-from-scratch-using-rest-apis--cms-27117
 https://www.tutorialspoint.com/android/android_json_parser.htm
 
+Android Firebase
+https://codelabs.developers.google.com/codelabs/firebase-android/#0
+
 Others
 https://programmerblog.net/nodejs-mongodb-rest-api/
 https://medium.com/of-all-things-tech-progress/5-steps-to-build-a-rest-api-in-node-js-with-mongodb-e1f2113a39bd
