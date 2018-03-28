@@ -24,3 +24,6 @@ Attend 10%
 Quiz 10% (Option)
 
 ป โท สอบมิดเทอมวันที่ 3 มีนาคม
+
+Todo
+1. Add a page to explain x,y coordinate in graph slide.
