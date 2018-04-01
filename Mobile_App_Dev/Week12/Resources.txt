@@ -1,12 +1,18 @@
+JSON data
 https://github.com/jokecamp/FootballData/blob/master/Euro%202016/spain-players.json
 Name, position, club
+https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson
+https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson
 
 Send data to server
 http://blog.appliedinformaticsinc.com/sending-json-data-to-server-using-async-thread/
 
-Example of Android+Json
-https://code.tutsplus.com/tutorials/android-from-scratch-using-rest-apis--cms-27117
+Example of Android+Json (Use the first one in the class)
 https://www.tutorialspoint.com/android/android_json_parser.htm
+https://code.tutsplus.com/tutorials/android-from-scratch-using-rest-apis--cms-27117
+
+Good lecture
+http://www.gidgreen.com/course/2014-5-slides/07-web-api-design.pdf
 
 Android Firebase
 https://codelabs.developers.google.com/codelabs/firebase-android/#0
@@ -27,6 +33,9 @@ React cms
 https://hackernoon.com/want-to-get-started-with-flamelink-a-firebase-cms-right-now-2eb93d6d7be9
 https://hackernoon.com/how-i-built-a-content-management-system-for-a-react-app-in-one-day-269df17f5509
 https://github.com/adamarthurryan/react-firebase-simple-cms
+
+JSON online tools
+https://jsoneditoronline.org/
 
 
 
